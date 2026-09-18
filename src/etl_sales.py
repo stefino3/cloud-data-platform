@@ -1,6 +1,7 @@
 import csv
 from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
 
+VAT_RATE = Decimal("0.20")
 INPUT_FILE = "data/sales.csv"
 OUTPUT_FILE = "data/sales_transformed.csv"
 REJECTED_FILE = "data/sales_rejected.csv"
@@ -24,7 +25,7 @@ def transform(rows):
             if amount_value < 0:
                 raise ValueError("Amount must not be negative.")
 
-            vat_value = (amount_value * Decimal("0.20")).quantize(
+            vat_value = (amount_value * VAT_RATE).quantize(
                 Decimal("0.01"),
                 rounding=ROUND_HALF_UP
             )
