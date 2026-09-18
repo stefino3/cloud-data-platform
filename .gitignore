@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Virtual environments
+.venv/
+.venv-wsl/
+
+# IDE
+.idea/
+.vscode/
+
+# Spark / Delta generated data
+data/checkpoints/
+data/delta/
+data/parquet/
+
+# Spark local files
+spark-warehouse/
+metastore_db/
+derby.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Generated ETL outputs
+data/sales_rejected.csv
+data/sales_rejected_pandas.csv
+data/sales_transformed.csv
+data/sales_transformed_pandas.csv
+
+# Spark generated output
+data/spark/
+
+# Docker / training temporary files
+data/from-container.txt
+
+# Local backup copies
+*- Kopie.py

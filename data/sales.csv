@@ -1,0 +1,9 @@
+﻿id,name,amount
+1,Alice,120.50
+2,Bob,75.00
+3,Carla,210.20
+4,David,abc
+5,,50.00
+-6,Eva,100.00
+7,Frank,-20.00
+ABC,George,300.00
