@@ -1,0 +1,37 @@
+name: Python CD
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.14"
+
+      - name: Validate Python
+        run: python -m compileall src
+
+      - name: Create deployment package
+        run: |
+          mkdir deployment
+          cp -r src deployment/
+          cp data/sales.csv deployment/
+
+      - name: Upload deployment artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: cloud-data-platform
+          path: deployment/
