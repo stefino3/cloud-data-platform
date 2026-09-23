@@ -40,3 +40,17 @@ data/from-container.txt
 
 # Local backup copies
 *- Kopie.py
+
+# Terraform
+**/.terraform/
+**/*.tfstate
+**/*.tfstate.*
+**/*.tfplan
+**/crash.log
+**/crash.*.log
+
+# Terraform local override files
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
